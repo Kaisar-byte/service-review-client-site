@@ -1,10 +1,39 @@
-import React from "react";
-import loginImage from "../../../../src/assets/images/login.webp";
+import React, { useContext } from "react";
 import { AiFillFacebook } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const Login = () => {
+  const { SignIn, googleSignIn } = useContext(AuthContext);
+  const Navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathName || "/";
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    SignIn(email, password)
+      .then((res) => {
+        const user = res.user;
+        const currentUser = {
+          email: user.email,
+        };
+        Navigate(from, { replace: true });
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        Navigate(from, { replace: true });
+      })
+      .catch((err) => console.log(err.message));
+  };
+
   return (
     <section className="w-96 m-4 rounded-md mx-auto ">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-300 text-gray-800">
@@ -14,37 +43,34 @@ const Login = () => {
             Sign in to access your account
           </p>
         </div>
-        <form className="space-y-12 ng-untouched ng-pristine ng-valid">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-12 ng-untouched ng-pristine ng-valid"
+        >
           <div className="space-y-4">
             <div>
-              <label for="email" className="block mb-2 text-left text-sm">
+              <label htmlFor="email" className="block mb-2 text-left text-sm">
                 Email address
               </label>
               <input
-                type="email"
+                type="text"
                 name="email"
                 id="email"
-                placeholder="leroy@jenkins.com"
+                placeholder="user@usersite.com"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
               />
             </div>
             <div>
               <div className="flex justify-between mb-2">
-                <label for="password" className="text-sm">
+                <label htmlFor="password" className="text-sm">
                   Password
                 </label>
-                <Link
-                  to="/signup"
-                  className="text-xs hover:underline text-gray-600"
-                >
-                  Forgot password?
-                </Link>
               </div>
               <input
                 type="password"
                 name="password"
                 id="password"
-                placeholder="*****"
+                placeholder="Your password"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
               />
             </div>
@@ -52,16 +78,31 @@ const Login = () => {
           <div className="space-y-2">
             <div>
               <button
-                type="button"
-                className="w-full px-8 py-3 font-semibold rounded-md bg-green-600 text-gray-50"
+                type="submit"
+                className="w-full px-4 py-2 font-semibold rounded-md bg-green-600 text-gray-50"
               >
                 Sign in
               </button>
             </div>
-            <p className="px-6 text-sm text-center text-gray-600">
+            <p className="px-2 text-sm text-center text-gray-600">
               Don't have an account yet?
-              <Link className="hover:underline text-green-600">Sign up</Link>.
+              <Link to="/signup" className="hover:underline text-green-600">
+                Sign up
+              </Link>
+              .
             </p>
+          </div>
+          <hr className="" />
+          <div className="-mt-6 space-y-2 flex flex-col justify-center items-center align-middle">
+            <h2>Or Login Using </h2>
+            <div className="flex justify-around items-center">
+              <button className="mr-4">
+                <AiFillFacebook size={"24px"}></AiFillFacebook>
+              </button>
+              <button onClick={handleGoogleSignIn}>
+                <FcGoogle size={"24px"}></FcGoogle>
+              </button>
+            </div>
           </div>
         </form>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import FAQ from "../../FAQ/FAQ";
 import Feature from "../../Feature/Feature";
+import Gallery from "../../Gallery/Gallery";
 import Review from "../../Review/Review";
 import Services from "../../Services/Services";
 import Slider from "../../Slider/Slider";
@@ -14,11 +15,12 @@ const Home = () => {
       <div>
         <Services></Services>
       </div>
+      <div></div>
       <div>
-        <Feature></Feature>
+        <Gallery></Gallery>
       </div>
       <div>
-        <Review></Review>
+        <Feature></Feature>
       </div>
     </div>
   );

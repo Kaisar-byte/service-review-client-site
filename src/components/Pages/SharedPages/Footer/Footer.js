@@ -63,102 +63,39 @@ const Footer = () => {
             </Link>
           </div>
           <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-lg font-medium">Category</p>
+            <p className="pb-1 text-lg font-medium">Have a Look</p>
             <ul>
               <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:text-green-600"
-                >
-                  Link
-                </a>
+                <Link>Home</Link>
               </li>
               <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:text-green-600"
-                >
-                  Link
-                </a>
+                <Link>Service</Link>
               </li>
               <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:text-green-600"
-                >
-                  Link
-                </a>
+                <Link>FAQ</Link>
               </li>
               <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:text-green-600"
-                >
-                  Link
-                </a>
+                <Link>Blog</Link>
               </li>
               <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:text-green-600"
-                >
-                  Link
-                </a>
+                <Link>Contact Us</Link>
               </li>
             </ul>
           </div>
           <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-lg font-medium">Category</p>
+            <p className="pb-1 text-lg font-medium">Service</p>
             <ul>
               <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:text-green-600"
-                >
-                  Link
-                </a>
+                <Link>General Dentistry</Link>
               </li>
               <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:text-green-600"
-                >
-                  Link
-                </a>
+                <Link>Cosmetic Dentistry</Link>
               </li>
               <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:text-green-600"
-                >
-                  Link
-                </a>
+                <Link>Periodontal Dentistry</Link>
               </li>
               <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:text-green-600"
-                >
-                  Link
-                </a>
-              </li>
-              <li>
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="hover:text-green-600"
-                >
-                  Link
-                </a>
+                <Link>Orthodontic Dentistry</Link>
               </li>
             </ul>
           </div>

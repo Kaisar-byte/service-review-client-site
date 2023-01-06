@@ -1,55 +1,94 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../../Context/AuthProvider";
 
 const ServiceDetails = () => {
-  const [servicedetails, setServicedetails] = useState([]);
-  useEffect(() => {
-    fetch(`services.json`)
-      .then((res) => res.json())
-      .then((data) => setServicedetails(data));
-  }, []);
-  console.log(servicedetails);
-  return (
-    <section>
-      <div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
-          <div class="relative z-10 lg:py-16">
-            <div class="relative h-64 sm:h-80 lg:h-full">
-              <img
-                alt="House"
-                src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                class="absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-          </div>
+	const { user } = useContext(AuthContext);
 
-          <div class="relative flex items-center bg-gray-100">
-            <span class="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100"></span>
+	const services = useLoaderData();
+	const { _id, serviceName, serviceImage, serviceDescription, servicePrice } =
+		services;
 
-            <div class="p-8 sm:p-16 lg:p-24">
-              <h2 class="text-2xl font-bold sm:text-3xl">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempore, debitis.
-              </h2>
+	const handleAddReview = (e) => {
+		e.preventDefault();
+		const form = e.target;
+		const comment = form.comment.value;
+		const reviewBox = {
+			comment: comment,
+			id: _id,
+		};
 
-              <p class="mt-4 text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aliquid, molestiae! Quidem est esse numquam odio deleniti,
-                beatae, magni dolores provident quaerat totam eos, aperiam
-                architecto eius quis quibusdam fugiat dicta.
-              </p>
-
-              <a
-                href="#"
-                class="mt-8 inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-              >
-                Get in Touch
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+		fetch(`http://localhost:5000/review`, {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(reviewBox),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				if (data.acknowledged) {
+					alert("you comment to this service");
+					form.reset();
+				}
+			})
+			.catch((err) => console.log(err));
+	};
+	return (
+		<div>
+			<div className="flex sm: flex-col py-16 lg:py-0 lg:flex-col">
+				<img
+					className="sm:w-full sm:h-40 sm:mb-4 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 "
+					src={serviceImage}
+					alt=""
+				/>
+				<div className="w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:py-20 lg:max-w-screen-xl">
+					<div className="mb-0 pl-2">
+						<h2 className="mb-5 pl-2 w-full text-center rounded-lg bg-blue-200 border-2 border-gray-400 py-4 text-blue-500 font-sans text-xl font-bold tracking-tight  sm:text-4xl sm:leading-none ">
+							{serviceName}
+						</h2>
+						<h2 className="mb-5 pl-2 font-sans text-md text-orange-400 tracking-tight sm:text-2xl  md:text-left">
+							Consultation Fee: BDT {servicePrice}
+						</h2>
+						<p className="mb-5 text-base text-gray-700 md:text-lg md:text-justify">
+							{serviceDescription}
+						</p>
+					</div>
+				</div>
+				<div className="flex justify-center items-center">
+					<div className="flex flex-col p-8 shadow-sm rounded-xl lg:p-12 bg-gray-50 text-gray-800">
+						<div className="flex flex-col items-center w-full">
+							<h2 className="text-3xl font-semibold text-center">
+								Give your review here
+							</h2>
+							<div className="flex flex-col justify-center items-center w-full">
+								<form
+									className="flex justify-center flex-col items-center"
+									onSubmit={handleAddReview}
+								>
+									<textarea
+										name="comment"
+										rows="2"
+										cols="36"
+										placeholder="Message..."
+										className="mb-4 mt-4 p-10 border-2 border-gray-600 rounded-md resize-none text-gray-800 bg-gray-50"
+									></textarea>
+									<button
+										type="submit"
+										className="py-2 px-4 font-semibold rounded-md text-gray-50 bg-green-600"
+									>
+										Add Comments
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr className="mx-4" />
+		</div>
+	);
 };
 
 export default ServiceDetails;
