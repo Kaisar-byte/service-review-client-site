@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import AddService from "../../Pages/AddService/AddService";
 import Blog from "../../Pages/Blog/Blog";
 import FAQ from "../../Pages/FAQ/FAQ";
 import Feature from "../../Pages/Feature/Feature";
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
 						<Review></Review>
 					</PrivateRoute>
 				),
+			},
+			{
+				path: "/addservices",
+				element: <AddService></AddService>,
 			},
 		],
 	},

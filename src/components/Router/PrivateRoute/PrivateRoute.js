@@ -7,19 +7,11 @@ const PrivateRoute = ({ children }) => {
 
 	const location = useLocation();
 
-	if (loading) {
+	if (loading)
 		return (
-			<div
-				className="
-        spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0
-          text-green-500
-        "
-				role="status"
-			>
-				<span className="visually-hidden">Loading...</span>
-			</div>
+			<div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
 		);
-	}
+
 	if (user) {
 		return children;
 	}

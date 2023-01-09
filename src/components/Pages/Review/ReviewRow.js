@@ -2,9 +2,10 @@ import React from "react";
 import { RxAvatar } from "react-icons/rx";
 import { BsFillTrashFill } from "react-icons/bs";
 // import { BiEditAlt } from "react-icons/bs";
-import { BiEditAlt } from "react-icons/bi";
-const ReviewRow = ({ eachReview, handleDelete }) => {
-	const { _id, name, email, photoURL, comment, commentDate } = eachReview;
+// import { BiEditAlt } from "react-icons/bi";
+const ReviewRow = ({ eachReview, handleDelete, handleUpdateStatus }) => {
+	const { _id, name, email, photoURL, comment, commentDate, status } =
+		eachReview;
 
 	return (
 		<div>
@@ -35,21 +36,23 @@ const ReviewRow = ({ eachReview, handleDelete }) => {
 				</td>
 				<td>{commentDate}</td>
 				<th>
-					<button className="btn btn-square btn-success mr-4">
-						<BiEditAlt
-							size={"24px"}
-							className="text-black-500 hover:text-red-500"
-						></BiEditAlt>
-					</button>
-					<button
-						onClick={() => handleDelete(_id)}
-						className="btn btn-square btn-success"
-					>
-						<BsFillTrashFill
-							size={"24px"}
-							className="text-black-500 hover:text-red-500"
-						></BsFillTrashFill>
-					</button>
+					<div className="flex justify-end items-end">
+						<button
+							className="btn btn-success mr-4"
+							onClick={() => handleUpdateStatus(_id)}
+						>
+							{status ? status : "pending"}
+						</button>
+						<button
+							onClick={() => handleDelete(_id)}
+							className="btn btn-square btn-success"
+						>
+							<BsFillTrashFill
+								size={"24px"}
+								className="text-black-500 hover:text-red-500"
+							></BsFillTrashFill>
+						</button>
+					</div>
 				</th>
 			</tr>
 		</div>

@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
 import { RxAvatar } from "react-icons/rx";
 import AllReview from "../Review/AllReview";
+import Swal from "sweetalert2";
 
 const ServiceDetails = () => {
 	const { user, setUser } = useContext(AuthContext);
@@ -39,7 +40,7 @@ const ServiceDetails = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				if (data.acknowledged) {
-					alert("successful");
+					Swal.fire("You commented for this service", "", "success");
 					form.reset();
 				}
 			})

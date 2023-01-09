@@ -32,10 +32,12 @@ const AuthProvider = ({ children }) => {
 	};
 
 	const googleSignIn = () => {
+		setLoading(true);
 		return signInWithPopup(auth, googleProvider);
 	};
 
 	const updateUserProfile = (profile) => {
+		setLoading(true);
 		updateProfile(auth.currentUser, profile);
 	};
 
@@ -47,6 +49,8 @@ const AuthProvider = ({ children }) => {
 		googleSignIn,
 		setUser,
 		updateUserProfile,
+		loading,
+		setLoading,
 	};
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -56,7 +60,7 @@ const AuthProvider = ({ children }) => {
 		return () => {
 			return unsubscribe();
 		};
-	}, [auth]);
+	}, []);
 	return (
 		<AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>
 	);
