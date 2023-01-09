@@ -4,6 +4,7 @@ import { AuthContext } from "../../../Context/AuthProvider";
 import { RxAvatar } from "react-icons/rx";
 import AllReview from "../Review/AllReview";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const ServiceDetails = () => {
 	const { user, setUser } = useContext(AuthContext);
@@ -55,6 +56,12 @@ const ServiceDetails = () => {
 	}, []);
 	return (
 		<div>
+			<Helmet>
+				<title>Dentist Jishan-Particular Service page</title>
+				<meta name="description" content="This Home Page" />
+				<meta name="keywords" content="Dental, Service, Doctor, Teeth" />
+			</Helmet>
+
 			<div className="flex sm: flex-col py-16 lg:py-0 lg:flex-col">
 				<img
 					className="sm:w-full sm:h-40 sm:mb-4 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 "

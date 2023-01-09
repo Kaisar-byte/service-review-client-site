@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import Service from "./Service";
 
 const Services = () => {
@@ -19,6 +20,12 @@ const Services = () => {
 	};
 	return (
 		<div className="flex flex-col justify-center items-center gap-6">
+			<Helmet>
+				<title>Dentist Jishan-Service page</title>
+				<meta name="description" content="This Service Page" />
+				<meta name="keywords" content="Dental, Service, Doctor, Teeth" />
+			</Helmet>
+
 			<div className="grid lg:grid-cols-2  md:grid-cols-2 sm:grid-cols-1  sm:w-full px-6 gap-14 my-8 justify-center items-center">
 				{services.map((serviceCard) => (
 					<Service key={serviceCard._id} serviceCard={serviceCard}></Service>

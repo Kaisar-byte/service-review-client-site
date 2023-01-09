@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../Context/AuthProvider";
 
@@ -76,6 +77,12 @@ const Review = () => {
 	};
 	return (
 		<div className="w-full">
+			<Helmet>
+				<title>Dentist Jishan-Review page</title>
+				<meta name="description" content="This Home Page" />
+				<meta name="keywords" content="Dental, Service, Doctor, Teeth" />
+			</Helmet>
+
 			<table className="table w-full">
 				<thead>
 					<tr>

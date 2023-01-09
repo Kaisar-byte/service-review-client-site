@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Helmet } from "react-helmet";
 import { AiFillFacebook } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
@@ -35,6 +36,12 @@ const Login = () => {
 	};
 	return (
 		<section className="w-96 m-4 rounded-md mx-auto ">
+			<Helmet>
+				<title>Dentist Jishan-Sign In</title>
+				<meta name="description" content="This Sign in Page" />
+				<meta name="keywords" content="Dental, Service, Doctor, Teeth" />
+			</Helmet>
+
 			<div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-300 text-gray-800">
 				<div className="mb-6 text-center">
 					<h1 className="my-3 text-4xl font-bold">Sign in</h1>
