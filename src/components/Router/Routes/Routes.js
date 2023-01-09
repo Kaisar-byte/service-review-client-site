@@ -4,11 +4,13 @@ import FAQ from "../../Pages/FAQ/FAQ";
 import Feature from "../../Pages/Feature/Feature";
 import Main from "../../Pages/Layout/Main";
 import Login from "../../Pages/Login/Login";
+import AllReview from "../../Pages/Review/AllReview";
 import Review from "../../Pages/Review/Review";
 import ServiceDetails from "../../Pages/Services/ServiceDetails";
 import Services from "../../Pages/Services/Services";
 import Home from "../../Pages/SharedPages/Home/Home";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
 	{
@@ -52,8 +54,12 @@ export const router = createBrowserRouter([
 					fetch(`http://localhost:5000/services/${params.id}`),
 			},
 			{
-				path: "/addreview",
-				element: <Review></Review>,
+				path: "/reviews",
+				element: (
+					<PrivateRoute>
+						<Review></Review>
+					</PrivateRoute>
+				),
 			},
 		],
 	},

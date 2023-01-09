@@ -10,19 +10,16 @@ const Services = () => {
 	}, []);
 
 	const handleLoadMore = () => {
-		fetch(`http://localhost:5000/services/seeall`, {
-			method: "GET",
-			headers: {
-				"content-type": "application/json",
-				body: JSON.stringify(),
-			},
-		})
+		fetch(`http://localhost:5000/services/seeall`)
 			.then((res) => res.json())
-			.then((data) => setServices(data));
+			.then((data) => {
+				console.log(data);
+				setServices(data);
+			});
 	};
 	return (
-		<div className="">
-			<div className="grid grid-cols-3 mx-14 gap-10 my-12 justify-items-center items-center align-middle">
+		<div className="flex flex-col justify-center items-center gap-6">
+			<div className="grid lg:grid-cols-2  md:grid-cols-2 sm:grid-cols-1  sm:w-full px-6 gap-14 my-8 justify-center items-center">
 				{services.map((serviceCard) => (
 					<Service key={serviceCard._id} serviceCard={serviceCard}></Service>
 				))}

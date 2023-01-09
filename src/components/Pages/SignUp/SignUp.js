@@ -1,25 +1,40 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
 
 const SignUp = () => {
-	const { SignUp } = useContext(AuthContext);
-	const Navigate = useNavigate();
+	const { SignUp, updateUserProfile, user } = useContext(AuthContext);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const form = e.target;
-		const name = form.name.value;
+		const name = form.name.value || user?.displayName;
 		const email = form.email.value;
 		const password = form.password.value;
-		console.log(name, email, password);
+		const photoURL = form.photoURL.value || user?.photoURL;
+
+		const handleUpdateUserProfile = () => {
+			const profile = {
+				name: name,
+				photoURL: photoURL,
+			};
+			updateUserProfile(profile)
+				.then(() => {})
+				.catch((error) => {
+					console.error(error);
+				});
+		};
+
 		SignUp(email, password)
 			.then((result) => {
-				console.log(result.email, result.password);
 				const user = result.user;
+				handleUpdateUserProfile();
+				form.reset();
 				Navigate("/");
 			})
 			.catch((err) => console.error(err));
 	};
+
 	return (
 		<section className="w-96 m-4 rounded-md mx-auto ">
 			<div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-300 text-gray-800">
@@ -55,6 +70,7 @@ const SignUp = () => {
 								name="email"
 								id="email"
 								placeholder="user@email.com"
+								required
 								className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
 							/>
 						</div>
@@ -69,6 +85,7 @@ const SignUp = () => {
 								name="password"
 								id="password"
 								placeholder="*****"
+								required
 								className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
 							/>
 						</div>
@@ -82,6 +99,7 @@ const SignUp = () => {
 								type="text"
 								name="photoURL"
 								id="photoURL"
+								required
 								placeholder="Your Photo URL"
 								className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-50 text-gray-800"
 							/>

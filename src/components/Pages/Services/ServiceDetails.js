@@ -1,24 +1,35 @@
-import React, { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
+import { RxAvatar } from "react-icons/rx";
+import AllReview from "../Review/AllReview";
 
 const ServiceDetails = () => {
-	const { user } = useContext(AuthContext);
-
+	const { user, setUser } = useContext(AuthContext);
 	const services = useLoaderData();
-	const { _id, serviceName, serviceImage, serviceDescription, servicePrice } =
+	const { serviceName, serviceImage, serviceDescription, servicePrice } =
 		services;
 
+	const [reviewitems, setReviewitems] = useState([]);
 	const handleAddReview = (e) => {
 		e.preventDefault();
 		const form = e.target;
+		const name = user?.displayName || "unregistered";
+
+		const email = user?.email;
+		const photoURL = user?.photoURL;
 		const comment = form.comment.value;
+		const commentDate = user?.metadata?.creationTime;
 		const reviewBox = {
-			comment: comment,
-			id: _id,
+			name,
+			email,
+			photoURL,
+			comment,
+			commentDate,
 		};
 
-		fetch(`http://localhost:5000/review`, {
+		console.log(reviewBox);
+		fetch(`http://localhost:5000/reviews`, {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -27,14 +38,21 @@ const ServiceDetails = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
 				if (data.acknowledged) {
-					alert("you comment to this service");
+					alert("successful");
 					form.reset();
 				}
 			})
 			.catch((err) => console.log(err));
 	};
+
+	useEffect(() => {
+		fetch(`http://localhost:5000/reviews`)
+			.then((res) => res.json())
+			.then((data) => {
+				setReviewitems(data);
+			});
+	}, []);
 	return (
 		<div>
 			<div className="flex sm: flex-col py-16 lg:py-0 lg:flex-col">
@@ -43,50 +61,77 @@ const ServiceDetails = () => {
 					src={serviceImage}
 					alt=""
 				/>
-				<div className="w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:py-20 lg:max-w-screen-xl">
-					<div className="mb-0 pl-2">
-						<h2 className="mb-5 pl-2 w-full text-center rounded-lg bg-blue-200 border-2 border-gray-400 py-4 text-blue-500 font-sans text-xl font-bold tracking-tight  sm:text-4xl sm:leading-none ">
+				<div className="w-full max-w-2xl px-4 mx-auto md:px-0 lg:px-4 lg:py-20 lg:max-w-screen-2xl">
+					<div>
+						<h2 className="mb-5 text-center rounded-lg bg-blue-200 border-2 border-gray-400 py-4 text-blue-500 font-sans text-md font-bold tracking-tight  sm:text-4xl sm:leading-none ">
 							{serviceName}
 						</h2>
 						<h2 className="mb-5 pl-2 font-sans text-md text-orange-400 tracking-tight sm:text-2xl  md:text-left">
 							Consultation Fee: BDT {servicePrice}
 						</h2>
-						<p className="mb-5 text-base text-gray-700 md:text-lg md:text-justify">
+						<p className=" text-base text-gray-700 md:text-lg md:text-justify">
 							{serviceDescription}
 						</p>
 					</div>
 				</div>
-				<div className="flex justify-center items-center">
-					<div className="flex flex-col p-8 shadow-sm rounded-xl lg:p-12 bg-gray-50 text-gray-800">
-						<div className="flex flex-col items-center w-full">
-							<h2 className="text-3xl font-semibold text-center">
-								Give your review here
-							</h2>
-							<div className="flex flex-col justify-center items-center w-full">
+				<div className="flex mx-6 justify-center w-full items-center">
+					<div className="mb-12 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+						<div className="flex flex-col max-w-xl p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-900 dark:text-gray-100">
+							<div className="flex flex-col items-center w-full">
+								<h2 className="text-3xl font-semibold text-center">
+									Write about my provided services
+								</h2>
+								<div className="flex flex-col items-center py-6 space-y-3">
+									<span className="text-center">How was your experience?</span>
+								</div>
 								<form
-									className="flex justify-center flex-col items-center"
 									onSubmit={handleAddReview}
+									className="flex flex-col w-full"
 								>
 									<textarea
 										name="comment"
-										rows="2"
-										cols="36"
-										placeholder="Message..."
-										className="mb-4 mt-4 p-10 border-2 border-gray-600 rounded-md resize-none text-gray-800 bg-gray-50"
+										rows="3"
+										placeholder="Add review message..."
+										className="p-4 border-2 border-yellow-400 rounded-md resize-none dark:text-gray-100 dark:bg-gray-900"
 									></textarea>
-									<button
-										type="submit"
-										className="py-2 px-4 font-semibold rounded-md text-gray-50 bg-green-600"
-									>
-										Add Comments
-									</button>
+									<div className="mt-6">
+										{user ? (
+											<>
+												{" "}
+												<button
+													type="submit"
+													className="py-4 btn btn-warning my-8 font-semibold rounded-md dark:text-gray-900 dark:bg-violet-400"
+												>
+													Add Comment
+												</button>
+											</>
+										) : (
+											<>
+												<p>
+													Please login to add a review ....{" "}
+													<Link
+														to="/login"
+														className="btn btn-success hover:bg-orange-400 hover:text-white"
+													>
+														Log in
+													</Link>
+												</p>
+											</>
+										)}
+									</div>
 								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<hr className="mx-4" />
+			<div>
+				<div className="grid grid-cols-2 gap-4 mx-4 justify-center items-center">
+					{reviewitems.map((review) => (
+						<AllReview key={review._id} review={review}></AllReview>
+					))}
+				</div>
+			</div>
 		</div>
 	);
 };
