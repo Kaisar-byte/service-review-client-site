@@ -1,8 +1,7 @@
 import React from "react";
 import { RxAvatar } from "react-icons/rx";
 import { BsFillTrashFill } from "react-icons/bs";
-// import { BiEditAlt } from "react-icons/bs";
-// import { BiEditAlt } from "react-icons/bi";
+
 const ReviewRow = ({ eachReview, handleDelete, handleUpdateStatus }) => {
 	const { _id, name, email, photoURL, comment, commentDate, status } =
 		eachReview;

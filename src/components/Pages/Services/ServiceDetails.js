@@ -16,7 +16,6 @@ const ServiceDetails = () => {
 		e.preventDefault();
 		const form = e.target;
 		const name = user?.displayName || "unregistered";
-
 		const email = user?.email;
 		const photoURL = user?.photoURL;
 		const comment = form.comment.value;

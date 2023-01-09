@@ -1,10 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../../Context/AuthProvider";
+import React from "react";
 
 const AllReview = ({ review }) => {
-	const { user } = useContext(AuthContext);
-	const [totalreviews, setTotalreviews] = useState({});
 	const { name, email, photoURL, comment, commentDate } = review;
+
 	return (
 		<div>
 			<div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">

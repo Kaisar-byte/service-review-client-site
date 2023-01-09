@@ -37,7 +37,6 @@ const Review = () => {
 			}
 		});
 
-		// const proceed = window.confirm("Are you sure you want to delete this");
 		if (proceed) {
 			fetch(`http://localhost:5000/reviews/${id}`, {
 				method: "DELETE",
@@ -46,7 +45,6 @@ const Review = () => {
 				.then((data) => {
 					console.log(data);
 					if (data.deletedCount > 0) {
-						// Swal.fire("Any fool can use a computer");
 						const remaining = myreviews.filter(
 							(indlReview) => indlReview._id !== id
 						);
@@ -89,14 +87,30 @@ const Review = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{myreviews.map((eachReview) => (
-						<ReviewRow
-							key={eachReview._id}
-							handleDelete={handleDelete}
-							eachReview={eachReview}
-							handleUpdateStatus={handleUpdateStatus}
-						></ReviewRow>
-					))}
+					{myreviews.length === 0 ? (
+						<>
+							<div className="dark:bg-gray-800 dark:text-gray-100">
+								<div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+									<div className="max-w-3xl mx-auto text-center">
+										<h2 className="text-3xl font-extrabold sm:text-4xl text-center">
+											No reviews yet. Please give a review.
+										</h2>
+									</div>
+								</div>
+							</div>
+						</>
+					) : (
+						<>
+							{myreviews.map((eachReview) => (
+								<ReviewRow
+									key={eachReview._id}
+									handleDelete={handleDelete}
+									eachReview={eachReview}
+									handleUpdateStatus={handleUpdateStatus}
+								></ReviewRow>
+							))}
+						</>
+					)}
 				</tbody>
 
 				<tfoot></tfoot>
