@@ -1,50 +1,50 @@
 [
-  {
-    "serviceName": "General Dentistry",
-    "servicePrice": 13000,
-    "serviceImage": "https://media.istockphoto.com/id/1241452006/photo/young-beautiful-woman-came-to-doctor-for-teeth-examination.jpg?s=1024x1024&w=is&k=20&c=XBnCa8k1sdl3amo0dQdV3nmxEu9sBvCKH9Sniz0zklY=",
-    "serviceDescription": "General dentists look after the overall health of our teeth and oral hygiene. They offer restorative dentistry including dental bridges, implants, onlays, inlays, bonding, and dentures. They also provide tooth decay treatments (like the filling of cavities), as well as dental exams, X-rays, teeth cleanings, along with simple tooth extractions, and fluoride treatments."
-  },
-  {
-    "serviceName": "Cosmetic Dentistry",
-    "servicePrice": 18000,
-    "serviceImage": "https://plus.unsplash.com/premium_photo-1661436659702-c7daff5466c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    "serviceDescription": "Cosmetic dentistry procedures improve your smile and self-confidence through teeth whitening or teeth bleaching. The latter reduces stains and discolouration to give you a brighter smile. Other common cosmetic dentistry procedures are crowns, implants, tooth bonding, and teeth shaping. Another popular option you can get at many cosmetic dental offices in Brampton are dental veneers. These shells of thin cement are put onto the front of your teeth to improve their appearance.."
-  },
-  {
-    "serviceName": "Periodontal Dentistry",
-    "servicePrice": 20000,
-    "serviceImage": "https://plus.unsplash.com/premium_photo-1661436618225-f9c72316215e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-    "serviceDescription": "This form of dentistry prevents and treats conditions and diseases that affect the structures that support our teeth. These include our gums, the cementum (surface layer of the tooth root), periodontal ligament, and alveolar bone.They also treat gum diseases and offer surgeries like pocket reduction and gum grafting. You will require the services of a periodontal dentist in cases of severe gum disease, or if you have a medical history of minor but complicated gum disease."
-  },
-  {
-    "serviceName": "Orthodontic Dentistry",
-    "servicePrice": 30000,
-    "serviceImage": "https://media.istockphoto.com/id/929676310/photo/girl-with-teeth-braces-using-interdental-and-traditional-brush.jpg?s=1024x1024&w=is&k=20&c=tq-oUmHzpYzLjLxd2Q_Twgk7_2P4kzJvX3YKAzjsygc=",
-    "serviceDescription": "Dentists who deal in orthodontic dentistry help us align our teeth and jaws in cases of misaligned teeth, underbites, crossbites, or overbites. They correct these issues using palate expanders, braces, retainers, fixed-space maintainers, clear aligners, headgear, and other specialized treatments. These services improve the alignment of our teeth and bite over time."
-  },
-  {
-    "serviceName": "Pediatric Dentistry",
-    "servicePrice": 24000,
-    "serviceImage": "https://media.istockphoto.com/id/1166191908/photo/cute-little-girl-getting-teeth-exam-at-dental-clinic.jpg?s=1024x1024&w=is&k=20&c=WpXYFpbW_EqG8PyAZs5XBPKE4yBFAYUVuWc7D5_9ck4=",
-    "serviceDescription": "Pediatric surgeons cater to the dental (and emotional) needs and oral health of children, ranging from infants to teens. Routine services include teeth cleaning and cavity filling, as well as monitoring the development of their teeth. They also track and diagnose oral conditions related to childhood diseases and conditions."
-  },
-  {
-    "serviceName": "Endodontic Dentistry",
-    "servicePrice": 19000,
-    "serviceImage": "https://plus.unsplash.com/premium_photo-1661768571778-52173afa5a74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
-    "serviceDescription": "The words ‘root canal’ give many of us nightmares. Well, no more. When you’re looking for a dentist in Brampton for root canal therapy, you need an endodontist. Endodontic dentistry deals with the sensitive interior of your tooth when it is damaged, infected, or diseased. Treatments include root canal."
-  },
-  {
-    "serviceName": "Prosthodontic Dentistry",
-    "servicePrice": 24000,
-    "serviceImage": "https://media.istockphoto.com/id/918643574/photo/dental-technician-working-on-3d-printed-mold-for-tooth-implants.jpg?s=1024x1024&w=is&k=20&c=L_hFCzE_qeicSlGqEvNGuDL_HLVJoq4TPA3LGgnir5k=",
-    "serviceDescription": "These services replace and restore your damaged or missing teeth. These specialists design, fabricate, and fit artificial replacements for missing or damaged teeth, and other areas in your mouth. These help restore the natural appearance and functionality of your mouth. Prosthodontic services include installing bridges, dental implants, and dentures, as well as reconstructive surgery. Prosthodontic dentists are also highly trained for certain cosmetic procedures, like veneers and crowns."
-  },
-  {
-    "serviceName": "Oral and Maxillofacial Dentistry",
-    "servicePrice": 29000,
-    "serviceImage": "https://media.istockphoto.com/id/899413710/photo/dental-oral-and-maxillofacial-surgery-concept-photo-gloved-surgeon-hand-with-scalpel-is-near.jpg?s=1024x1024&w=is&k=20&c=nEe81M8wMBHj2HGMmaFiakUtnsuCEZpw746H-6P5Df8=",
-    "serviceDescription": "Oral and maxillofacial dentists are known for wisdom tooth extraction. In general, wisdom teeth don’t get enough room to erupt properly as they are the final ones to come in. If they remain in that crowded space, they can cause infection and damage other teeth and oral bone. A fully impacted wisdom tooth may require extensive surgery to be removed, which is where oral surgeons come in."
-  }
+	{
+		"serviceName": "General Dentistry",
+		"servicePrice": 13000,
+		"serviceImage": "https://media.istockphoto.com/id/1241452006/photo/young-beautiful-woman-came-to-doctor-for-teeth-examination.jpg?s=1024x1024&w=is&k=20&c=XBnCa8k1sdl3amo0dQdV3nmxEu9sBvCKH9Sniz0zklY=",
+		"serviceDescription": "General dentists look after the overall health of our teeth and oral hygiene. They offer restorative dentistry including dental bridges, implants, onlays, inlays, bonding, and dentures. They also provide tooth decay treatments (like the filling of cavities), as well as dental exams, X-rays, teeth cleanings, along with simple tooth extractions, and fluoride treatments."
+	},
+	{
+		"serviceName": "Cosmetic Dentistry",
+		"servicePrice": 18000,
+		"serviceImage": "https://plus.unsplash.com/premium_photo-1661436659702-c7daff5466c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+		"serviceDescription": "Cosmetic dentistry procedures improve your smile and self-confidence through teeth whitening or teeth bleaching. The latter reduces stains and discolouration to give you a brighter smile. Other common cosmetic dentistry procedures are crowns, implants, tooth bonding, and teeth shaping. Another popular option you can get at many cosmetic dental offices in Brampton are dental veneers. These shells of thin cement are put onto the front of your teeth to improve their appearance.."
+	},
+	{
+		"serviceName": "Periodontal Dentistry",
+		"servicePrice": 20000,
+		"serviceImage": "https://plus.unsplash.com/premium_photo-1661436618225-f9c72316215e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+		"serviceDescription": "This form of dentistry prevents and treats conditions and diseases that affect the structures that support our teeth. These include our gums, the cementum (surface layer of the tooth root), periodontal ligament, and alveolar bone.They also treat gum diseases and offer surgeries like pocket reduction and gum grafting. You will require the services of a periodontal dentist in cases of severe gum disease, or if you have a medical history of minor but complicated gum disease."
+	},
+	{
+		"serviceName": "Orthodontic Dentistry",
+		"servicePrice": 30000,
+		"serviceImage": "https://media.istockphoto.com/id/929676310/photo/girl-with-teeth-braces-using-interdental-and-traditional-brush.jpg?s=1024x1024&w=is&k=20&c=tq-oUmHzpYzLjLxd2Q_Twgk7_2P4kzJvX3YKAzjsygc=",
+		"serviceDescription": "Dentists who deal in orthodontic dentistry help us align our teeth and jaws in cases of misaligned teeth, underbites, crossbites, or overbites. They correct these issues using palate expanders, braces, retainers, fixed-space maintainers, clear aligners, headgear, and other specialized treatments. These services improve the alignment of our teeth and bite over time."
+	},
+	{
+		"serviceName": "Pediatric Dentistry",
+		"servicePrice": 24000,
+		"serviceImage": "https://media.istockphoto.com/id/1166191908/photo/cute-little-girl-getting-teeth-exam-at-dental-clinic.jpg?s=1024x1024&w=is&k=20&c=WpXYFpbW_EqG8PyAZs5XBPKE4yBFAYUVuWc7D5_9ck4=",
+		"serviceDescription": "Pediatric surgeons cater to the dental (and emotional) needs and oral health of children, ranging from infants to teens. Routine services include teeth cleaning and cavity filling, as well as monitoring the development of their teeth. They also track and diagnose oral conditions related to childhood diseases and conditions."
+	},
+	{
+		"serviceName": "Endodontic Dentistry",
+		"servicePrice": 19000,
+		"serviceImage": "https://plus.unsplash.com/premium_photo-1661768571778-52173afa5a74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
+		"serviceDescription": "The words ‘root canal’ give many of us nightmares. Well, no more. When you’re looking for a dentist in Brampton for root canal therapy, you need an endodontist. Endodontic dentistry deals with the sensitive interior of your tooth when it is damaged, infected, or diseased. Treatments include root canal."
+	},
+	{
+		"serviceName": "Prosthodontic Dentistry",
+		"servicePrice": 24000,
+		"serviceImage": "https://media.istockphoto.com/id/918643574/photo/dental-technician-working-on-3d-printed-mold-for-tooth-implants.jpg?s=1024x1024&w=is&k=20&c=L_hFCzE_qeicSlGqEvNGuDL_HLVJoq4TPA3LGgnir5k=",
+		"serviceDescription": "These services replace and restore your damaged or missing teeth. These specialists design, fabricate, and fit artificial replacements for missing or damaged teeth, and other areas in your mouth. These help restore the natural appearance and functionality of your mouth. Prosthodontic services include installing bridges, dental implants, and dentures, as well as reconstructive surgery. Prosthodontic dentists are also highly trained for certain cosmetic procedures, like veneers and crowns."
+	},
+	{
+		"serviceName": "Oral and Maxillofacial Dentistry",
+		"servicePrice": 29000,
+		"serviceImage": "https://media.istockphoto.com/id/899413710/photo/dental-oral-and-maxillofacial-surgery-concept-photo-gloved-surgeon-hand-with-scalpel-is-near.jpg?s=1024x1024&w=is&k=20&c=nEe81M8wMBHj2HGMmaFiakUtnsuCEZpw746H-6P5Df8=",
+		"serviceDescription": "Oral and maxillofacial dentists are known for wisdom tooth extraction. In general, wisdom teeth don’t get enough room to erupt properly as they are the final ones to come in. If they remain in that crowded space, they can cause infection and damage other teeth and oral bone. A fully impacted wisdom tooth may require extensive surgery to be removed, which is where oral surgeons come in."
+	}
 ]

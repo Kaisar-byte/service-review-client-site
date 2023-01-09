@@ -15,7 +15,7 @@ const Home = () => {
 				<meta name="description" content="This Home Page" />
 				<meta name="keywords" content="Dental, Service, Doctor, Teeth" />
 			</Helmet>
-			;
+
 			<div>
 				<Slider></Slider>
 			</div>
