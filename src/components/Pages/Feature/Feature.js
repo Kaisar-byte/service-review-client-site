@@ -1,8 +1,14 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Feature = () => {
   return (
     <section className="grid gap-6 lg:grid-cols-2">
+      <Helmet>
+        <title>Dentist Jishan-Feature page</title>
+        <meta name="description" content="This Feature Page" />
+        <meta name="keywords" content="Dental, Service, Doctor, Teeth" />
+      </Helmet>
       <div className="p-8 space-y-8 rounded-md lg:col-span-full lg:py-12 bg-gray-50">
         <h2 className="text-5xl font-bold text-gray-900">
           CLIENT IS OUR WEALTH

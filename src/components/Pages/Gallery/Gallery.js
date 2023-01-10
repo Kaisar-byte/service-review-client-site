@@ -1,8 +1,14 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 const Gallery = () => {
   return (
     <section className="py-6 bg-gray-100 text-gray-900">
+      <Helmet>
+        <title>Dentist Jishan-Gallery page</title>
+        <meta name="description" content="This FAQ Page" />
+        <meta name="keywords" content="Dental, Service, Doctor, Teeth" />
+      </Helmet>
       <div className="p-8 space-y-8 rounded-md lg:col-span-full lg:py-12 bg-gray-50">
         <h2 className="text-5xl font-bold text-gray-900">
           Our Richfull Gallery

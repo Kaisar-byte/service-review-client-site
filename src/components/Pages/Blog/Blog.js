@@ -1,9 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   return (
     <div>
+      <Helmet>
+        <title>Dentist Jishan-Blog page</title>
+        <meta name="description" content="This Blog Page" />
+        <meta name="keywords" content="Dental, Service, Doctor, Teeth" />
+      </Helmet>
       <div className="mx-10 my-12 ">
         <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-gray-50 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
           <div className="flex justify-between">
@@ -11,7 +17,6 @@ const Blog = () => {
             <Link className="px-2 py-1 font-bold rounded bg-green-600 text-gray-50">
               Database
             </Link>
-            {/* testing  */}
           </div>
           <div className="mt-3">
             <Link className="text-2xl text-blue-700 font-bold hover:underline">
