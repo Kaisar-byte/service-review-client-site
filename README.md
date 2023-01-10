@@ -1,9 +1,10 @@
-# Site Name
+### Site Name
 Dentist Jishan
 
-## Site Moto: **
+### Site Moto: **
 A private dental service providing to customer by one to one
 
+<a name="general-info"></a>
 # Site Feature: **
 	Service 
 	Gallery
