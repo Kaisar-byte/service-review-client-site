@@ -4,9 +4,9 @@ Dentist Jishan
 ### Site Moto: **
 A private dental service providing to customer by one to one
 
-<a name="general-info"></a>
+
 # Site Feature: **
-	Service 
++	[Service ]
 	Gallery
 	Feature
 	Add Service
