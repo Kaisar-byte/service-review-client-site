@@ -1,11 +1,11 @@
-## **Site Name**
+#### **Site Name**
 Dentist Jishan
 
-## **Site Moto**__: 
+## **Site Moto** 
 A private dental service providing to customer by one to one
 
 
-_## **Site Feature**: _
+## **Site Feature**: 
 +	Service 
 +	Gallery
 +	Feature
@@ -18,7 +18,7 @@ _## **Site Feature**: _
 +	Add Review
 +	My Review Section
 
-## **_Tools Used_**:
+## **Tools Used**:
 -	React-responsive-carousel
 -	React-helmet
 -	Daisyui
