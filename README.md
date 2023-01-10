@@ -1,4 +1,4 @@
-### **Site Name**
+## **Site Name**
 Dentist Jishan
 
 ## **Site Moto** 
