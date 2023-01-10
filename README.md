@@ -1,10 +1,10 @@
-Site Name: 
-
+# Site Name
 Dentist Jishan
 
-Site Moto: 
+## Site Moto: **
 A private dental service providing to customer by one to one
-Site Feature: 
+
+# Site Feature: **
 	Service 
 	Gallery
 	Feature
@@ -17,7 +17,7 @@ Site Feature:
 	Add Review
 	My Review Section
 
-Tools Used:
+# Tools Used:
 	React-responsive-carousel
 	React-helmet
 	Daisyui
